@@ -22,7 +22,15 @@ public class LibroVO {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idlibro;
 	private String Titulo;
+	private String ISBN;
 	
+	public String getISBN() {
+		return ISBN;
+	}
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+
 	@JoinTable(
         name = "rel_libros_autores",
         joinColumns = @JoinColumn(name = "FK_LIBRO", nullable = false),
