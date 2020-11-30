@@ -21,6 +21,16 @@ public class AutorVO {
 	@ManyToMany(mappedBy = "autores")
     private List<LibroVO> libros;
 
+	public AutorVO() {
+		super();
+	}
+
+	public AutorVO(String nombre, List<LibroVO> libros) {
+		super();
+		this.nombre = nombre;
+		this.libros = libros;
+	}
+
 	public int getIdautor() {
 		return idautor;
 	}
@@ -43,18 +53,6 @@ public class AutorVO {
 
 	public void setLibros(List<LibroVO> libros) {
 		this.libros = libros;
-	}
-
-	public AutorVO(int idautor, String nombre, List<LibroVO> libros) {
-		super();
-		this.idautor = idautor;
-		this.nombre = nombre;
-		this.libros = libros;
-	}
-
-	public AutorVO() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -90,7 +88,12 @@ public class AutorVO {
 			return false;
 		return true;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "AutorVO [idautor=" + idautor + ", nombre=" + nombre + ", libros=" + libros + "]";
+	}
+
+	
+	
 }

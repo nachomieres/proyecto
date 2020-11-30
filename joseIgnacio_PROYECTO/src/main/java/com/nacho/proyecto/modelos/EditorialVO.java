@@ -22,5 +22,80 @@ public class EditorialVO {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "editorial_id")
     private List<LibroVO> libros;
+
+	public EditorialVO() {
+		super();
+	}
+
+	public EditorialVO(String nombre, List<LibroVO> libros) {
+		super();	
+		this.nombre = nombre;
+		this.libros = libros;
+	}
+
+	public int getIdEditorial() {
+		return idEditorial;
+	}
+
+	public void setIdEditorial(int idEditorial) {
+		this.idEditorial = idEditorial;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public List<LibroVO> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(List<LibroVO> libros) {
+		this.libros = libros;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idEditorial;
+		result = prime * result + ((libros == null) ? 0 : libros.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EditorialVO other = (EditorialVO) obj;
+		if (idEditorial != other.idEditorial)
+			return false;
+		if (libros == null) {
+			if (other.libros != null)
+				return false;
+		} else if (!libros.equals(other.libros))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "EditorialVO [idEditorial=" + idEditorial + ", nombre=" + nombre + ", libros=" + libros + "]";
+	}
+	
+	
 	
 }

@@ -67,4 +67,17 @@ public class UsuarioVO {
 		this.roles = roles;
 	}
 
+	public UsuarioVO() {
+		super();
+	}
+
+	public UsuarioVO(String username, String password, Set<UsuarioRolVO> roles, List<LibroVO> libros) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+		this.libros = libros;
+	}
+	
+
 }
