@@ -1,4 +1,4 @@
-package com.nacho.proyecto.modelo;
+package com.nacho.proyecto.modelos;
 
 import java.util.List;
 
